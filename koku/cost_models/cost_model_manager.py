@@ -15,6 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 """Management layer for user defined rates."""
+import asyncio
 import copy
 import logging
 
@@ -55,11 +56,11 @@ class CostModelManager:
         provider_uuids = cost_model_data.pop("provider_uuids", [])
 
         self._model = CostModel.objects.create(**cost_model_data)
-        self.update_provider_uuids(provider_uuids)
+        asyncio.ensure_future(self.update_provider_uuids(provider_uuids))
         return self._model
 
     @transaction.atomic
-    def update_provider_uuids(self, provider_uuids):
+    async def update_provider_uuids(self, provider_uuids):
         """Update rate with new provider uuids."""
         current_providers_for_instance = []
         for rate_map_instance in CostModelMap.objects.filter(cost_model=self._model):

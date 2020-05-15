@@ -15,6 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 """View for Rates."""
+import asyncio
 import logging
 from functools import reduce
 from operator import and_
@@ -182,7 +183,7 @@ class CostModelViewSet(
         except CostModel.DoesNotExist:
             LOG.info("CostModel does not exist.")
         else:
-            manager.update_provider_uuids([])
+            asyncio.ensure_future(manager.update_provider_uuids([]))
         return super().destroy(request=request, args=args, kwargs=kwargs)
 
     @never_cache

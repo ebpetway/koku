@@ -15,6 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 """Rate serializer."""
+import asyncio
 import copy
 import logging
 from collections import defaultdict
@@ -391,7 +392,7 @@ class CostModelSerializer(serializers.Serializer):
         for uuid in source_uuids:
             new_providers_for_instance.append(str(Provider.objects.filter(uuid=uuid).first().uuid))
         manager = CostModelManager(cost_model_uuid=instance.uuid)
-        manager.update_provider_uuids(new_providers_for_instance)
+        asyncio.ensure_future(manager.update_provider_uuids(new_providers_for_instance))
         manager.update(**validated_data)
 
         return manager.instance
