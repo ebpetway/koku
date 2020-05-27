@@ -1,0 +1,106 @@
+
+#### Testing aws
+reporting_aws_cost_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/aws/costs/
+reporting_aws_cost_summary_by_account
+    http://127.0.0.1:8000/api/cost-management/v1/reports/aws/costs/?group_by[account]=*
+reporting_aws_cost_summary_by_service
+    http://127.0.0.1:8000/api/cost-management/v1/reports/aws/costs/?group_by[service]=*
+reporting_aws_cost_summary_by_region
+    http://127.0.0.1:8000/api/cost-management/v1/reports/aws/costs/?group_by[region]=*
+
+reporting_aws_compute_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/aws/instance-types/
+reporting_aws_compute_summary_by_account
+    http://127.0.0.1:8000/api/cost-management/v1/reports/aws/instance-types/?group_by[account]=*
+reporting_aws_compute_summary_by_region
+    http://127.0.0.1:8000/api/cost-management/v1/reports/aws/instance-types/?group_by[region]=*
+reporting_aws_compute_summary_by_service
+    http://127.0.0.1:8000/api/cost-management/v1/reports/aws/instance-types/?group_by[region]=*
+
+reporting_aws_storage_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/aws/storage/
+reporting_aws_storage_summary_by_account
+    http://127.0.0.1:8000/api/cost-management/v1/reports/aws/storage/?group_by[account]=*
+reporting_aws_storage_summary_by_region
+    http://127.0.0.1:8000/api/cost-management/v1/reports/aws/storage/?group_by[region]=*
+reporting_aws_storage_summary_by_service
+    http://127.0.0.1:8000/api/cost-management/v1/reports/aws/storage/?group_by[service]=*
+
+--  Can't figure out the url so been checking them in the pgadmin gui
+reporting_aws_database_summary
+reporting_aws_network_summary
+
+#### Testing Azure
+reporting_azure_cost_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/azure/costs/?filter[time_scope_value]=-30&filter[time_scope_units]=day&filter[resolution]=daily
+reporting_azure_cost_summary_by_account
+    http://127.0.0.1:8000/api/cost-management/v1/reports/azure/costs/?group_by[subscription_guid]=*&filter[time_scope_value]=-30&filter[time_scope_units]=day&filter[resolution]=daily
+reporting_azure_cost_summary_by_location
+    http://127.0.0.1:8000/api/cost-management/v1/reports/azure/costs/?group_by[resource_location]=*&filter[time_scope_value]=-30&filter[time_scope_units]=day&filter[resolution]=daily
+reporting_azure_cost_summary_by_service
+    http://127.0.0.1:8000/api/cost-management/v1/reports/azure/costs/?group_by[service_name]=*&filter[time_scope_value]=-30&filter[time_scope_units]=day&filter[resolution]=daily
+reporting_azure_compute_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/azure/instance-types/?filter[time_scope_value]=-30&filter[time_scope_units]=day&filter[resolution]=daily
+reporting_azure_storage_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/azure/storage/?filter[time_scope_value]=-30&filter[time_scope_units]=day&filter[resolution]=daily
+
+--  Can't figure out the url so been checking them in the pgadmin gui
+reporting_azure_network_summary
+reporting_azure_database_summary
+
+#### Testing OCP on Azure
+reporting_ocpazure_cost_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/infrastructures/azure/costs/?filter[time_scope_value]=-30&filter[time_scope_units]=day&filter[resolution]=daily
+reporting_ocpazure_cost_summary_by_account
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/infrastructures/azure/costs/?group_by[subscription_guid]=*&filter[time_scope_value]=-30&filter[time_scope_units]=day&filter[resolution]=daily
+reporting_ocpazure_cost_summary_by_location
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/infrastructures/azure/costs/?group_by[resource_location]=*&filter[time_scope_value]=-30&filter[time_scope_units]=day&filter[resolution]=daily
+reporting_ocpazure_cost_summary_by_service
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/infrastructures/azure/costs/?group_by[service_name]=*&filter[time_scope_value]=-30&filter[time_scope_units]=day&filter[resolution]=daily
+reporting_ocpazure_compute_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/infrastructures/azure/instance-types/?filter[time_scope_value]=-30&filter[time_scope_units]=day&filter[resolution]=daily
+reporting_ocpazure_storage_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/infrastructures/azure/storage/?filter[time_scope_value]=-30&filter[time_scope_units]=day&filter[resolution]=daily
+
+--  Can't figure out the url so been checking them in the pgadmin gui
+reporting_ocpazure_network_summary
+reporting_ocpazure_database_summary
+
+#### Testing OCP on AWS
+reporting_ocpaws_cost_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/infrastructures/aws/costs/
+reporting_ocpaws_cost_summary_by_account
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/infrastructures/aws/costs/?group_by[account]=*
+reporting_ocpaws_cost_summary_by_service
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/infrastructures/aws/costs/?group_by[service]=*
+reporting_ocpaws_cost_summary_by_region
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/infrastructures/aws/costs/?group_by[region]=*
+reporting_ocpaws_compute_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/infrastructures/aws/instance-types/
+reporting_ocpaws_storage_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/infrastructures/aws/storage/
+
+--  Can't figure out the url so been checking them in the pgadmin gui
+reporting_ocpaws_network_summary
+reporting_ocpaws_database_summary
+
+
+#### Testing OCP
+
+reporting_ocp_cost_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/costs/
+reporting_ocp_cost_summary_by_node
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/costs/?group_by[node]=*
+reporting_ocp_cost_summary_by_project
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/costs/?group_by[project]=*
+reporting_ocp_pod_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/compute/
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/memory/
+reporting_ocp_pod_summary_by_project
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/compute/?group_by[project]=*
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/memory/?group_by[project]=*
+reporting_ocp_volume_summary
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/volumes/
+reporting_ocp_volume_summary_by_project
+    http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/volumes/?group_by[project]=*
